@@ -1,19 +1,14 @@
 """Problem instances.
 
-* Java-12 / Java-30: real Indonesian cities on the island of Java
-  (approximate city-centre coordinates, distances = great-circle km).
-* U-50 / U-100: random uniform points in a 1000 x 1000 square
-  (Euclidean distance, fixed seed so the instances are reproducible).
+* Java-12 / Java-30: real cities on the island of Java (distances in km).
+* U-50 / U-100: random points in a 1000 x 1000 square (fixed seed).
 """
-from __future__ import annotations
 
 import random
 from dataclasses import dataclass
-from typing import List
 
-from .core import Matrix, Point, distance_matrix, euclidean, haversine_km
+from .core import distance_matrix, euclidean, haversine_km
 
-# name -> (latitude, longitude) in degrees
 JAVA_CITIES = {
     "Jakarta": (-6.2088, 106.8456),
     "Bekasi": (-6.2383, 106.9756),
@@ -47,37 +42,46 @@ JAVA_CITIES = {
     "Banyuwangi": (-8.2192, 114.3691),
 }
 
-JAVA_12 = ["Jakarta", "Serang", "Bandung", "Cirebon", "Purwokerto", "Semarang",
-           "Yogyakarta", "Solo", "Madiun", "Surabaya", "Malang", "Banyuwangi"]
+JAVA_12 = ["Jakarta", "Serang", "Bandung", "Cirebon", "Purwokerto",
+           "Semarang", "Yogyakarta", "Solo", "Madiun", "Surabaya", "Malang",
+           "Banyuwangi"]
 
 
 @dataclass
 class Instance:
+    """A TSP problem: city names, coordinates and distance matrix d."""
     name: str
-    labels: List[str]
-    points: List[Point]
-    kind: str            # "geo" (lat, lon) or "plane" (x, y)
-    d: Matrix
-    unit: str            # "km" or "units"
+    labels: list
+    points: list
+    d: list
 
     @property
-    def n(self) -> int:
+    def n(self):
+        """Number of cities."""
         return len(self.points)
 
 
-def java_instance(names: List[str], label: str) -> Instance:
-    pts = [JAVA_CITIES[c] for c in names]
-    return Instance(label, list(names), pts, "geo", distance_matrix(pts, haversine_km), "km")
+def java_instance(names, label):
+    """Real Java cities, (latitude, longitude), distances in km."""
+    points = [JAVA_CITIES[city] for city in names]
+
+    return Instance(label, list(names), points,
+                    distance_matrix(points, haversine_km))
 
 
-def uniform_instance(n: int, seed: int) -> Instance:
+def uniform_instance(n, seed):
+    """n random (x, y) points in a 1000 x 1000 square."""
     rng = random.Random(seed)
-    pts = [(rng.uniform(0, 1000), rng.uniform(0, 1000)) for _ in range(n)]
+    points = [(rng.uniform(0, 1000), rng.uniform(0, 1000))
+              for _ in range(n)]
     labels = [str(i) for i in range(n)]
-    return Instance(f"U-{n}", labels, pts, "plane", distance_matrix(pts, euclidean), "units")
+
+    return Instance(f"U-{n}", labels, points,
+                    distance_matrix(points, euclidean))
 
 
-def get_instances() -> dict:
+def get_instances():
+    """The four instances of the report, by name."""
     return {
         "Java-12": java_instance(JAVA_12, "Java-12"),
         "Java-30": java_instance(list(JAVA_CITIES), "Java-30"),
