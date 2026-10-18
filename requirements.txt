@@ -1,0 +1,6 @@
+# Core algorithms use only the Python standard library (Python >= 3.9).
+# The packages below are needed for the experiments, figures and the PDF report.
+numpy
+scipy
+matplotlib
+reportlab
