@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## E5 parameter sensitivity of SA and GA
-##
-
 """E5: how much do the parameters of SA and GA matter? (Java-30)"""
 
 from tsp.annealing import simulated_annealing

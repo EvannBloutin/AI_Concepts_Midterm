@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## E1 exact search and E6 reference solutions
-##
-
 """E1: exact search on small instances (brute force, UCS, A*, Held-Karp).
 E6: reference ("best known") solution of every instance.
 """

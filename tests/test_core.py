@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## Unit tests of the building blocks (distances, 2-opt, GA operators)
-##
-
 """Unit tests of the building blocks. Run from the project root with:
 
     python -m unittest discover -s tests -v

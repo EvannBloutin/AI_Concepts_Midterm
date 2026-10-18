@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## Run every experiment of the report and save the results
-##
-
 """Run every experiment of the report and save the raw results.
 
 Usage (from the project root):

@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## Settings and helpers shared by all the experiments
-##
-
 """Settings and helpers shared by all the experiments.
 
 `config` is a dict built by run_experiments.py with the output folder,

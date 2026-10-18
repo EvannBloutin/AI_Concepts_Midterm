@@ -33,11 +33,6 @@ tests/                     16 unit tests (test_core, test_exact, test_heuristics
 results/                   raw results (JSON) used by the report
 report/                    figures and final report (PDF)
 ```
-
-The code follows the Epitech coding style adapted to Python: functions of at
-most 20 lines and 4 parameters, at most 10 functions per file, 80 columns, no
-comments inside functions (docstrings instead), no global variables modified.
-
 Solvers take `(dist, budget, seed, params)` where `params` is an optional dict
 (see `SA_DEFAULTS` and `GA_DEFAULTS`), e.g.
 `genetic_algorithm(inst.d, 30000, 1, {"pop_size": 50})`.

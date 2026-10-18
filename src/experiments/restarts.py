@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## E4 single hill climbs vs random restarts
-##
-
 """E4: hill climbing, single climbs vs random restarts.
 
 p = probability that one climb ends within tau of the best known tour.

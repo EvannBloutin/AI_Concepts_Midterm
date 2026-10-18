@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## Unit tests of the heuristics (HC, SA, GA, MA, baselines)
-##
-
 """Unit tests of the heuristics. Run from the project root with:
 
     python -m unittest discover -s tests -v

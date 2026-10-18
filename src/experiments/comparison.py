@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## E2 main comparison and E3 budget effect
-##
-
 """E2: every algorithm on every instance, `runs` seeds each.
 E3: effect of the evaluation budget on U-50.
 """

@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2026
-## AI_Concepts_Midterm
-## File description:
-## Unit tests of the exact methods and of the lower bound
-##
-
 """Unit tests of the exact methods. Run from the project root with:
 
     python -m unittest discover -s tests -v
